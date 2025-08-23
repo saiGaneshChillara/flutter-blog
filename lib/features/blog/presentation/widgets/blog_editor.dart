@@ -17,6 +17,7 @@ class BlogEditor extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
       ),
+      maxLines: null,
     );
   }
 }
