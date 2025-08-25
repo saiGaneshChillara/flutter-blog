@@ -183,11 +183,13 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                     BlogEditor(
                       controller: titleController,
                       hintText: "Blog title",
+                      maxLines: 1,
                     ),
                     const SizedBox(height: 10),
                     BlogEditor(
                       controller: contentController,
                       hintText: "Blog Content",
+                      maxLines: 0,
                     ),
                   ],
                 ),
