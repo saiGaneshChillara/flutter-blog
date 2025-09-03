@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:myapp/core/error/exceptions.dart';
 import 'package:myapp/features/blog/data/models/blog_model.dart';
-import 'package:myapp/features/blog/domain/entities/blog.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract interface class BlogRemoteDataSource {
@@ -13,7 +12,7 @@ abstract interface class BlogRemoteDataSource {
     required BlogModel blog,
   });
 
-  Future<List<Blog>> getAllBlogs();
+  Future<List<BlogModel>> getAllBlogs();
 }
 
 class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
@@ -56,7 +55,7 @@ class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
   }
   
   @override
-  Future<List<Blog>> getAllBlogs() async {
+  Future<List<BlogModel>> getAllBlogs() async {
     try {
       final blogs = await supabaseClient
         .from('blogs')
